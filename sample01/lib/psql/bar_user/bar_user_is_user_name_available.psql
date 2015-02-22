@@ -1,0 +1,15 @@
+/**
+ * Test whether a user name is available.
+ * Selects 1 if the user name is available, 0 otherwise.
+ *
+ * @param p_usr_name The inquired user name for availability.
+ */
+create procedure bar_user_is_user_name_available( p_usr_name @bar_user.usr_name%type@ )
+reads sql data
+-- type: singleton1
+begin
+  select if(count(*)<>0,1,0)
+  from   BAR_USER
+  where  usr_name = p_usr_name
+  ;
+end

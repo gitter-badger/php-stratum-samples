@@ -1,0 +1,18 @@
+{
+  "name": "setbased/php-stratum-samples",
+  "description": "PhpStratum demos and samples",
+  "keywords": ["PhpStratum","samples"],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "setbased/phing-extensions": "1.*"
+  },
+  "require": {
+    "setbased/php-stratum": "0.9.*"
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}

@@ -1,0 +1,7 @@
+.idea/
+bin/
+composer.lock
+sample*/etc/config.php
+sample*/etc/routines.json
+sample*/lib/DataLayer.php
+vendor/

@@ -1,0 +1,15 @@
+/**
+ * Selects all accounts that are blocked (ordered by user name).
+ */
+create procedure bar_user_get_blocked_accounts()
+reads sql data
+-- type: rows
+begin
+  select usr_id
+  ,      usr_name
+  ,      usr_email
+  from   BAR_USER
+  where  ust_id = @BAR_UST_ID_BLOCKED@
+  order by usr_name
+  ;
+end
