@@ -10,11 +10,6 @@ unzip php-stratum-samples.zip
 cd php-stratum-samples-master
 ```
 
-Run [composer](https://getcomposer.org/) to install PhpStratum.
-```bash
-composer update
-```
-
 Create user and schema for running the samples by executing the commands below under `root`.
 ```mysql
 grant usage on *.* to `sample_owner`@`localhost` identified by 'sample_owner';
@@ -24,12 +19,28 @@ grant all on sample01.* to 'sample_owner'@'localhost';
 ```
 
 ## Sample01
-First create tables and load static data.
+All commands must be given in the sample01 directory:
 ```bash
-mysql -usample_owner -psample_owner sample01 < sample01/lib/ddl/01_create_tables.sql
-mysql -usample_owner -psample_owner sample01 < sample01/lib/ddl/02_bar_user_status.sql
+cd sample01
 ```
-Run PhpStratum as follows:
+Run [composer](https://getcomposer.org/) to install PhpStratum for sample01:
 ```bash
-./bin/stratum -c sample01/etc/stratum.cfg
+composer update
+```
+Create tables and load static data:
+```bash
+mysql -usample_owner -psample_owner sample01 < lib/ddl/01_create_tables.sql
+mysql -usample_owner -psample_owner sample01 < lib/ddl/02_bar_user_status.sql
+```
+Run PhpStratum:
+```bash
+./bin/stratum -c etc/stratum.cfg
+```
+The output of PhpStratum will be:
+```text
+Wrote: 'src/C.php'.
+Loading procedure bar_user_is_user_name_available
+Loading procedure bar_user_get_blocked_accounts
+Wrote: 'etc/routines.json'.
+Wrote: 'src/DataLayer.php'.
 ```
