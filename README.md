@@ -1,4 +1,6 @@
 # PhpStratum Samples
+
+[![Join the chat at https://gitter.im/SetBased/php-stratum-samples](https://badges.gitter.im/SetBased/php-stratum-samples.svg)](https://gitter.im/SetBased/php-stratum-samples?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Samples using PhpStratum.
 
 # Running Samples
